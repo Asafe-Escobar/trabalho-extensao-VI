@@ -1,0 +1,232 @@
+{
+  "name": "Flow · 03 Pós-venda",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 * * *"
+            }
+          ]
+        }
+      },
+      "id": "ba50005c-b646-5967-bfc5-8f9a6bb12c30",
+      "name": "Todo dia às 9h",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "={{ $env.FLOW_API_URL || 'http://localhost:8000' }}/api/automacoes/pedidos-entregues?dias=1",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-Flow-Token",
+              "value": "={{ $env.FLOW_AUTOMACAO_TOKEN }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "3c6375ce-2b2e-5d12-ad46-87772bfa7a6a",
+      "name": "Pedidos entregues ontem",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        220,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "fieldToSplitOut": "pedidos",
+        "options": {}
+      },
+      "id": "58978fc3-5c7f-5f35-9f32-a0446d3006d8",
+      "name": "Um item por pedido",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        440,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.WHATSAPP_API_URL }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $env.WHATSAPP_TOKEN }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ to: $json.telefone, text: `Oi, ${$json.cliente_nome}! Seu pedido ${$json.numero} foi entregue. De 0 a 10, quanto você recomendaria a Flow? Responda só com o número.` }) }}",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "07d001d0-0f58-5f0a-884a-a47d3c0e48c5",
+      "name": "Pesquisa de satisfação",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        660,
+        200
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "amount": 3,
+        "unit": "days"
+      },
+      "id": "8d6140eb-3657-59c4-a124-744b205eed8f",
+      "name": "Esperar 3 dias",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        660,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "loose"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "c-Tem sugestão?",
+              "leftValue": "={{ ($json.sugestao && $json.sugestao.nome) || '' }}",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "7171d62d-9608-55f2-b9cb-7eee37053518",
+      "name": "Tem sugestão?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        880,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "fromEmail": "={{ $env.FLOW_EMAIL_FROM || 'atendimento@flow.example' }}",
+        "toEmail": "={{ $json.email }}",
+        "subject": "=Combina com seu {{ $json.itens[0].nome }}: {{ $json.sugestao.nome }}",
+        "emailFormat": "html",
+        "html": "=<p>Oi, {{ $json.cliente_nome }}!</p><p>Quem comprou <b>{{ $json.itens[0].nome }}</b> costuma levar também <b>{{ $json.sugestao.nome }}</b> por R$ {{ Number($json.sugestao.preco).toFixed(2).replace('.', ',') }}.</p><p>Responda este e-mail que um vendedor monta a proposta para você.</p><p>Equipe Flow</p>",
+        "options": {}
+      },
+      "id": "b28886b8-5b13-5f15-8aed-2e98f2867254",
+      "name": "Oferta relacionada",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        1100,
+        400
+      ],
+      "onError": "continueRegularOutput"
+    }
+  ],
+  "connections": {
+    "Todo dia às 9h": {
+      "main": [
+        [
+          {
+            "node": "Pedidos entregues ontem",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pedidos entregues ontem": {
+      "main": [
+        [
+          {
+            "node": "Um item por pedido",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Um item por pedido": {
+      "main": [
+        [
+          {
+            "node": "Pesquisa de satisfação",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Esperar 3 dias",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Esperar 3 dias": {
+      "main": [
+        [
+          {
+            "node": "Tem sugestão?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Tem sugestão?": {
+      "main": [
+        [
+          {
+            "node": "Oferta relacionada",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Fortaleza"
+  },
+  "tags": [
+    {
+      "name": "flow"
+    },
+    {
+      "name": "pos-venda"
+    }
+  ],
+  "pinData": {}
+}

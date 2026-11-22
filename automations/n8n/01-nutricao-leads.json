@@ -1,0 +1,377 @@
+{
+  "name": "Flow · 01 Nutrição de leads",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "flow-lead",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "id": "a665671e-f4ab-50d5-af52-7106acdd40c4",
+      "name": "Webhook lead",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "manual",
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a1",
+              "name": "nome",
+              "type": "string",
+              "value": "={{ $json.body.nome || 'cliente' }}"
+            },
+            {
+              "id": "a2",
+              "name": "telefone",
+              "type": "string",
+              "value": "={{ ($json.body.telefone || '').replace(/\\D/g, '') }}"
+            },
+            {
+              "id": "a3",
+              "name": "email",
+              "type": "string",
+              "value": "={{ $json.body.email || '' }}"
+            },
+            {
+              "id": "a4",
+              "name": "interesse",
+              "type": "string",
+              "value": "={{ $json.body.interesse || '' }}"
+            },
+            {
+              "id": "a5",
+              "name": "score",
+              "type": "number",
+              "value": "={{ Number($json.body.score || 0) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "cf89b65e-d0dc-5882-a975-2d1efe0e64c4",
+      "name": "Normalizar lead",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "loose"
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "c-Lead quente? (score >= 70)",
+              "leftValue": "={{ $json.score }}",
+              "operator": {
+                "type": "number",
+                "operation": "gte"
+              },
+              "rightValue": 70
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "b611c18c-9a57-5196-928d-a7f3b8a4764e",
+      "name": "Lead quente? (score >= 70)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        440,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "={{ $env.TELEGRAM_CHAT_VENDAS }}",
+        "text": "=Lead quente (score {{ $json.score }})\n{{ $json.nome }} · {{ $json.telefone }}\nInteresse: {{ $json.interesse }}\nLigar em até 15 min.",
+        "additionalFields": {}
+      },
+      "id": "e17f5c22-09f7-5677-ad87-390e61452000",
+      "name": "Avisar vendedor (Telegram)",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        680,
+        140
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.WHATSAPP_API_URL }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $env.WHATSAPP_TOKEN }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ to: $json.telefone, text: `Olá, ${$json.nome}! Aqui é a Flow. Recebemos seu interesse em ${$json.interesse}. Um consultor vai falar com você em instantes.` }) }}",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "0283be21-6472-5f55-92b8-3d615c5961ec",
+      "name": "WhatsApp imediato",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        680,
+        300
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "={{ $env.FLOW_API_URL || 'http://localhost:8000' }}/api/leads/{{ $('Webhook lead').item.json.body.id }}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"estagio\": \"qualificado\"}",
+        "options": {}
+      },
+      "id": "19008d1a-8628-5786-8019-ce63488d866f",
+      "name": "Estágio = qualificado",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        900,
+        220
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "amount": 1,
+        "unit": "days"
+      },
+      "id": "4c951490-736e-5ddd-b9ee-3563b47afb18",
+      "name": "Esperar 1 dia",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        680,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "fromEmail": "={{ $env.FLOW_EMAIL_FROM || 'atendimento@flow.example' }}",
+        "toEmail": "={{ $json.email }}",
+        "subject": "=Dicas para escolher {{ $json.interesse }}",
+        "emailFormat": "html",
+        "html": "=<p>Oi, {{ $json.nome }}!</p><p>Separamos um guia rápido sobre <b>{{ $json.interesse }}</b> e as condições desta semana nas lojas de Teresina, Parnaíba e São Luís.</p><p>Responda este e-mail ou chame no WhatsApp para receber seu orçamento.</p><p>Equipe Flow</p>",
+        "options": {}
+      },
+      "id": "cebf4f1f-8f01-5823-bbd2-f1f3448b7f5c",
+      "name": "E-mail conteúdo (D+1)",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        900,
+        480
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "amount": 3,
+        "unit": "days"
+      },
+      "id": "8d6140eb-3657-59c4-a124-744b205eed8f",
+      "name": "Esperar 3 dias",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1120,
+        480
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.WHATSAPP_API_URL }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $env.WHATSAPP_TOKEN }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ to: $('Normalizar lead').item.json.telefone, text: `${$('Normalizar lead').item.json.nome}, ainda pensando em ${$('Normalizar lead').item.json.interesse}? Posso montar um orçamento sem compromisso. Responda SIM.` }) }}",
+        "options": {
+          "timeout": 10000
+        }
+      },
+      "id": "e3e4727f-45de-5f76-98bc-3d953a95d05e",
+      "name": "WhatsApp oferta (D+4)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1340,
+        480
+      ],
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "={{ $env.FLOW_API_URL || 'http://localhost:8000' }}/api/leads/{{ $('Webhook lead').item.json.body.id }}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\"estagio\": \"proposta\"}",
+        "options": {}
+      },
+      "id": "bb552a72-67b6-5407-a675-6af5f53d7824",
+      "name": "Estágio = proposta",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1560,
+        480
+      ],
+      "onError": "continueRegularOutput"
+    }
+  ],
+  "connections": {
+    "Webhook lead": {
+      "main": [
+        [
+          {
+            "node": "Normalizar lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalizar lead": {
+      "main": [
+        [
+          {
+            "node": "Lead quente? (score >= 70)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Avisar vendedor (Telegram)": {
+      "main": [
+        [
+          {
+            "node": "Estágio = qualificado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Esperar 1 dia": {
+      "main": [
+        [
+          {
+            "node": "E-mail conteúdo (D+1)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "E-mail conteúdo (D+1)": {
+      "main": [
+        [
+          {
+            "node": "Esperar 3 dias",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Esperar 3 dias": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp oferta (D+4)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp oferta (D+4)": {
+      "main": [
+        [
+          {
+            "node": "Estágio = proposta",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lead quente? (score >= 70)": {
+      "main": [
+        [
+          {
+            "node": "Avisar vendedor (Telegram)",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "WhatsApp imediato",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Esperar 1 dia",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Fortaleza"
+  },
+  "tags": [
+    {
+      "name": "flow"
+    },
+    {
+      "name": "leads"
+    }
+  ],
+  "pinData": {}
+}

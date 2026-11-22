@@ -1,0 +1,1118 @@
+{
+ "fonte": "GET https://api.revgas.com/v1/products (snapshot 2026-11-22, sem dados de clientes)",
+ "produtos": [
+  {
+   "id": 26432,
+   "descricao": "ABRAÇADEIRA STARRET",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 30,
+   "container_id": null,
+   "variacoes": [
+    "STARRET"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 29089,
+   "descricao": "ADAPTADOR DUBOM",
+   "estoque": 3221,
+   "emprestado": 0,
+   "revgas_product_id": 40,
+   "container_id": null,
+   "variacoes": [
+    "DUBOM"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 24142,
+   "descricao": "AGUA 1,25L",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 24,
+   "container_id": null,
+   "variacoes": [
+    "1,25L"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 28073,
+   "descricao": "AGUA 1,5L",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 24,
+   "container_id": null,
+   "variacoes": [
+    "1,5L"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 28959,
+   "descricao": "AGUA 1,5L REFRESQUE",
+   "estoque": 84,
+   "emprestado": 0,
+   "revgas_product_id": 24,
+   "container_id": null,
+   "variacoes": [
+    "1,5L",
+    "REFRESQUE"
+   ],
+   "preco_referencia": 5.0
+  },
+  {
+   "id": 24141,
+   "descricao": "AGUA 10L",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 24,
+   "container_id": null,
+   "variacoes": [
+    "10L"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 26255,
+   "descricao": "AGUA 20L",
+   "estoque": 2056,
+   "emprestado": 2,
+   "revgas_product_id": 24,
+   "container_id": null,
+   "variacoes": [
+    "20L"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 24143,
+   "descricao": "AGUA 330ML",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 24,
+   "container_id": null,
+   "variacoes": [
+    "330ML"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 25506,
+   "descricao": "AGUA 330ML TESTA",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 24,
+   "container_id": 25507,
+   "variacoes": [
+    "330ML",
+    "TESTA"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 28258,
+   "descricao": "AGUA 500ML FD C/12",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 24,
+   "container_id": null,
+   "variacoes": [
+    "500ML",
+    "FD C/12"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 29087,
+   "descricao": "AGUA 510ML",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 24,
+   "container_id": null,
+   "variacoes": [
+    "510ML"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 25508,
+   "descricao": "AGUA BARA BARA BARA 20L",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 24,
+   "container_id": 25509,
+   "variacoes": [
+    "BARA BARA BARA",
+    "20L"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 24996,
+   "descricao": "AGUA CRYSTAL 20L",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 24,
+   "container_id": 24616,
+   "variacoes": [
+    "CRYSTAL",
+    "20L"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 29092,
+   "descricao": "AGUA Cristal10 10L",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 24,
+   "container_id": null,
+   "variacoes": [
+    "10L",
+    "CRISTAL10"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 25316,
+   "descricao": "AGUA DA BOA 20L",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 24,
+   "container_id": null,
+   "variacoes": [
+    "DA BOA",
+    "20L"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 31701,
+   "descricao": "AGUA DEALS QUEBRADO TESTE 20L",
+   "estoque": 67,
+   "emprestado": 0,
+   "revgas_product_id": 24,
+   "container_id": null,
+   "variacoes": [
+    "DEALS QUEBRADO TESTE",
+    "20L"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 28650,
+   "descricao": "AGUA Flor de água 200ML",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 24,
+   "container_id": null,
+   "variacoes": [
+    "200ML",
+    "FLOR DE ÁGUA"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 24615,
+   "descricao": "AGUA REGINA 20L",
+   "estoque": 186,
+   "emprestado": 0,
+   "revgas_product_id": 24,
+   "container_id": 24616,
+   "variacoes": [
+    "REGINA",
+    "20L"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 25038,
+   "descricao": "AGUA SADASD 20L",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 24,
+   "container_id": null,
+   "variacoes": [
+    "SADASD",
+    "20L"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 28234,
+   "descricao": "AGUA TESTE 20L",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 24,
+   "container_id": 28235,
+   "variacoes": [
+    "TESTE",
+    "20L"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 28334,
+   "descricao": "AGUA TESTE 20L",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 24,
+   "container_id": 28335,
+   "variacoes": [
+    "TESTE",
+    "20L"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 29090,
+   "descricao": "AGUA VIDA 350ML",
+   "estoque": 97,
+   "emprestado": 0,
+   "revgas_product_id": 24,
+   "container_id": null,
+   "variacoes": [
+    "VIDA",
+    "350ML"
+   ],
+   "preco_referencia": 5.0
+  },
+  {
+   "id": 26937,
+   "descricao": "AGUA VIENA 500ML FD C/ 12",
+   "estoque": 495,
+   "emprestado": 0,
+   "revgas_product_id": 24,
+   "container_id": null,
+   "variacoes": [
+    "VIENA",
+    "500ML",
+    "FD C/ 12"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 28849,
+   "descricao": "AGUA VOLPE 10L",
+   "estoque": 11,
+   "emprestado": 0,
+   "revgas_product_id": 24,
+   "container_id": null,
+   "variacoes": [
+    "VOLPE",
+    "10L"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 26326,
+   "descricao": "BOMBA",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 33,
+   "container_id": null,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 30242,
+   "descricao": "BOMBA 66",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 33,
+   "container_id": null,
+   "variacoes": [
+    "66"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 24452,
+   "descricao": "BOMBA AUTOMÁTICA",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 33,
+   "container_id": null,
+   "variacoes": [
+    "AUTOMÁTICA"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 29000,
+   "descricao": "BOMBA TIGRINHO",
+   "estoque": 8,
+   "emprestado": 0,
+   "revgas_product_id": 33,
+   "container_id": null,
+   "variacoes": [
+    "TIGRINHO"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 25103,
+   "descricao": "CARVÃO",
+   "estoque": 13,
+   "emprestado": 15,
+   "revgas_product_id": 28,
+   "container_id": null,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 29686,
+   "descricao": "CARVÃO ARTUR",
+   "estoque": 48,
+   "emprestado": 0,
+   "revgas_product_id": 28,
+   "container_id": null,
+   "variacoes": [
+    "ARTUR"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 29088,
+   "descricao": "FURADOR Tramontina mil",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 35,
+   "container_id": null,
+   "variacoes": [
+    "TRAMONTINA MIL"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 31185,
+   "descricao": "GELO",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 36,
+   "container_id": null,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 28999,
+   "descricao": "GELO ICE TOP",
+   "estoque": 18,
+   "emprestado": 0,
+   "revgas_product_id": 36,
+   "container_id": null,
+   "variacoes": [
+    "ICE TOP"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 25104,
+   "descricao": "GLP 10KG",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 26,
+   "container_id": 25105,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 23934,
+   "descricao": "GLP 13KG",
+   "estoque": 200,
+   "emprestado": 1,
+   "revgas_product_id": 3,
+   "container_id": 23935,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 26717,
+   "descricao": "GLP 13KG",
+   "estoque": 939,
+   "emprestado": 0,
+   "revgas_product_id": 3,
+   "container_id": 26718,
+   "variacoes": [],
+   "preco_referencia": 125.0
+  },
+  {
+   "id": 31720,
+   "descricao": "GLP 13KG 222222222",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 3,
+   "container_id": 31721,
+   "variacoes": [
+    "222222222"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 25313,
+   "descricao": "GLP 13KG DU BOM",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 3,
+   "container_id": 25314,
+   "variacoes": [
+    "DU BOM"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 23740,
+   "descricao": "GLP 13KG ENVASADO NO BOTIJÃO",
+   "estoque": 2997449,
+   "emprestado": 24,
+   "revgas_product_id": 3,
+   "container_id": 23741,
+   "variacoes": [
+    "ENVASADO NO BOTIJÃO"
+   ],
+   "preco_referencia": 150.0
+  },
+  {
+   "id": 24230,
+   "descricao": "GLP 13KG NORMAL",
+   "estoque": 38,
+   "emprestado": 0,
+   "revgas_product_id": 3,
+   "container_id": 24231,
+   "variacoes": [
+    "NORMAL"
+   ],
+   "preco_referencia": 150.0
+  },
+  {
+   "id": 25101,
+   "descricao": "GLP 13KG SUPER",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 3,
+   "container_id": 25102,
+   "variacoes": [
+    "SUPER"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 30335,
+   "descricao": "GLP 13KG TESTE",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 3,
+   "container_id": 27394,
+   "variacoes": [
+    "TESTE"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 30345,
+   "descricao": "GLP 13KG TESTE 3",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 3,
+   "container_id": 30340,
+   "variacoes": [
+    "TESTE 3"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 30346,
+   "descricao": "GLP 13KG TESTE 4",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 3,
+   "container_id": 30342,
+   "variacoes": [
+    "TESTE 4"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 28596,
+   "descricao": "GLP 16KG",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 38,
+   "container_id": 28597,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 28117,
+   "descricao": "GLP 20KG",
+   "estoque": 3,
+   "emprestado": 0,
+   "revgas_product_id": 4,
+   "container_id": 28118,
+   "variacoes": [],
+   "preco_referencia": 300.0
+  },
+  {
+   "id": 30726,
+   "descricao": "GLP 20KG",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 4,
+   "container_id": 30727,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 28405,
+   "descricao": "GLP 2KG",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 22,
+   "container_id": 28406,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 30728,
+   "descricao": "GLP 45KG",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 5,
+   "container_id": 30729,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 23974,
+   "descricao": "GLP 45KG MA",
+   "estoque": 150,
+   "emprestado": 3,
+   "revgas_product_id": 5,
+   "container_id": 23975,
+   "variacoes": [
+    "MA"
+   ],
+   "preco_referencia": 100.0
+  },
+  {
+   "id": 25106,
+   "descricao": "GLP 5KG",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 1,
+   "container_id": 25107,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 28379,
+   "descricao": "GLP 7KG",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 7,
+   "container_id": 28380,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 25112,
+   "descricao": "GLP 90KG",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 41,
+   "container_id": 25113,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 30336,
+   "descricao": "KIT REGULADOR DE PRESSÃO",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 14,
+   "container_id": null,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 26276,
+   "descricao": "KIT REGULADOR DE PRESSÃO 21321",
+   "estoque": 97,
+   "emprestado": 0,
+   "revgas_product_id": 14,
+   "container_id": null,
+   "variacoes": [
+    "21321"
+   ],
+   "preco_referencia": 100.0
+  },
+  {
+   "id": 28533,
+   "descricao": "KIT REGULADOR DE PRESSÃO DUPLO",
+   "estoque": 8863,
+   "emprestado": 0,
+   "revgas_product_id": 14,
+   "container_id": null,
+   "variacoes": [
+    "DUPLO"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 27841,
+   "descricao": "MANGUEIRA",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 31,
+   "container_id": null,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 28534,
+   "descricao": "MANGUEIRA C/ PIG TAIL",
+   "estoque": 994,
+   "emprestado": 0,
+   "revgas_product_id": 31,
+   "container_id": null,
+   "variacoes": [
+    "C/ PIG TAIL"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 24197,
+   "descricao": "MANGUEIRA DA GRANDE",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 31,
+   "container_id": null,
+   "variacoes": [
+    "DA GRANDE"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 24196,
+   "descricao": "REGULADOR DE PRESSÃO",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 32,
+   "container_id": null,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 26318,
+   "descricao": "REGULADOR DE PRESSÃO 123",
+   "estoque": 100,
+   "emprestado": 0,
+   "revgas_product_id": 32,
+   "container_id": null,
+   "variacoes": [
+    "123"
+   ],
+   "preco_referencia": 12.31
+  },
+  {
+   "id": 26433,
+   "descricao": "REGULADOR DE PRESSÃO STARRET",
+   "estoque": 9,
+   "emprestado": 0,
+   "revgas_product_id": 32,
+   "container_id": null,
+   "variacoes": [
+    "STARRET"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 31998,
+   "descricao": "SUPORTE",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 29,
+   "container_id": null,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 24547,
+   "descricao": "TORNEIRA",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 34,
+   "container_id": null,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 25105,
+   "descricao": "VASILHAME 10KG",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 27,
+   "container_id": null,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 23935,
+   "descricao": "VASILHAME 13KG",
+   "estoque": 533,
+   "emprestado": 1,
+   "revgas_product_id": 10,
+   "container_id": null,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 26718,
+   "descricao": "VASILHAME 13KG",
+   "estoque": 4990,
+   "emprestado": 1,
+   "revgas_product_id": 10,
+   "container_id": null,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 31721,
+   "descricao": "VASILHAME 13KG 222222222",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 10,
+   "container_id": null,
+   "variacoes": [
+    "222222222"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 26492,
+   "descricao": "VASILHAME 13KG CARLOS",
+   "estoque": 1114,
+   "emprestado": 0,
+   "revgas_product_id": 10,
+   "container_id": null,
+   "variacoes": [
+    "CARLOS"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 25314,
+   "descricao": "VASILHAME 13KG DU BOM",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 10,
+   "container_id": null,
+   "variacoes": [
+    "DU BOM"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 23741,
+   "descricao": "VASILHAME 13KG ENVASADO NO BOTIJÃO",
+   "estoque": 7996473,
+   "emprestado": 37,
+   "revgas_product_id": 10,
+   "container_id": null,
+   "variacoes": [
+    "ENVASADO NO BOTIJÃO"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 24231,
+   "descricao": "VASILHAME 13KG NORMAL",
+   "estoque": 102,
+   "emprestado": 0,
+   "revgas_product_id": 10,
+   "container_id": null,
+   "variacoes": [
+    "NORMAL"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 25102,
+   "descricao": "VASILHAME 13KG SUPER",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 10,
+   "container_id": null,
+   "variacoes": [
+    "SUPER"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 27394,
+   "descricao": "VASILHAME 13KG TESTE",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 10,
+   "container_id": null,
+   "variacoes": [
+    "TESTE"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 30338,
+   "descricao": "VASILHAME 13KG TESTE 2",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 10,
+   "container_id": null,
+   "variacoes": [
+    "TESTE 2"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 30340,
+   "descricao": "VASILHAME 13KG teste 3",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 10,
+   "container_id": null,
+   "variacoes": [
+    "TESTE 3"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 30342,
+   "descricao": "VASILHAME 13KG teste 4",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 10,
+   "container_id": null,
+   "variacoes": [
+    "TESTE 4"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 30344,
+   "descricao": "VASILHAME 13KG teste 5",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 10,
+   "container_id": null,
+   "variacoes": [
+    "TESTE 5"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 28597,
+   "descricao": "VASILHAME 16KG",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 39,
+   "container_id": null,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 28118,
+   "descricao": "VASILHAME 20KG",
+   "estoque": 6,
+   "emprestado": 0,
+   "revgas_product_id": 11,
+   "container_id": null,
+   "variacoes": [],
+   "preco_referencia": 50.01
+  },
+  {
+   "id": 30727,
+   "descricao": "VASILHAME 20KG",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 11,
+   "container_id": null,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 28406,
+   "descricao": "VASILHAME 2KG",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 23,
+   "container_id": null,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 30729,
+   "descricao": "VASILHAME 45KG",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 12,
+   "container_id": null,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 23975,
+   "descricao": "VASILHAME 45KG MA",
+   "estoque": 206,
+   "emprestado": 3,
+   "revgas_product_id": 12,
+   "container_id": null,
+   "variacoes": [
+    "MA"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 25107,
+   "descricao": "VASILHAME 5KG",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 8,
+   "container_id": null,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 28380,
+   "descricao": "VASILHAME 7KG",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 19,
+   "container_id": null,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 27385,
+   "descricao": "VASILHAME 7KG LLLL",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 19,
+   "container_id": null,
+   "variacoes": [
+    "LLLL"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 25113,
+   "descricao": "VASILHAME 90KG",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 42,
+   "container_id": null,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 24616,
+   "descricao": "VASILHAME AGUA 21321312 20L",
+   "estoque": 297,
+   "emprestado": 0,
+   "revgas_product_id": 25,
+   "container_id": null,
+   "variacoes": [
+    "21321312",
+    "20L"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 25507,
+   "descricao": "VASILHAME AGUA 330ML TESTA",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 25,
+   "container_id": null,
+   "variacoes": [
+    "330ML",
+    "TESTA"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 25509,
+   "descricao": "VASILHAME AGUA BARA BARA BARA 20L",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 25,
+   "container_id": null,
+   "variacoes": [
+    "BARA BARA BARA",
+    "20L"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 24997,
+   "descricao": "VASILHAME AGUA CRYSTAL 20L",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 25,
+   "container_id": null,
+   "variacoes": [
+    "CRYSTAL",
+    "20L"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 28235,
+   "descricao": "VASILHAME AGUA TESTE 20L",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 25,
+   "container_id": null,
+   "variacoes": [
+    "TESTE",
+    "20L"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 28335,
+   "descricao": "VASILHAME AGUA TESTE 20L",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 25,
+   "container_id": null,
+   "variacoes": [
+    "TESTE",
+    "20L"
+   ],
+   "preco_referencia": null
+  },
+  {
+   "id": 31215,
+   "descricao": "VELA",
+   "estoque": 0,
+   "emprestado": 0,
+   "revgas_product_id": 37,
+   "container_id": null,
+   "variacoes": [],
+   "preco_referencia": null
+  },
+  {
+   "id": 27110,
+   "descricao": "VELA FEIA",
+   "estoque": 3,
+   "emprestado": 0,
+   "revgas_product_id": 37,
+   "container_id": null,
+   "variacoes": [
+    "FEIA"
+   ],
+   "preco_referencia": null
+  }
+ ]
+}
